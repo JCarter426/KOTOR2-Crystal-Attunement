@@ -6,6 +6,7 @@
 
 int QC_GetCrystalColor();
 int QC_GetCrystalGlobal();
+int QC_GetCrystalClass();
 int QC_GetCrystalLevel();
 string QC_GetCrystalTag(int nCrystal);
 int QC_GetCurrentCrystal();
@@ -69,26 +70,29 @@ int QC_GetCrystalLevel() {
 	
 	- nGlobal: Quest Crystal value
 	
-    JC 2023-06-13                                                             */
+    JC 2023-03-12                                                             */
 ////////////////////////////////////////////////////////////////////////////////
 string QC_GetCrystalTag(int nCrystal) {
 	return "qcrystal_"
-		+ IntToString(nCrystal / 10) + "_"
-		+ IntToString(nCrystal % 10);
+		+ IntToString(nCrystal % 10) + "_" 
+		+ IntToString((nCrystal % 100) / 10) + "_"
+		+ IntToString(nCrystal / 100);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-/*  Gets the current Quest Crystal value as a 2-digit number based on the
-	player's alignment and level.
+/*  Gets the current Quest Crystal value as a 3-digit number based on the
+	player's class, alignment, and level.
 	
-	- 1st digit: level (1-9)
+	- 1st digit: class (0-2)
 	- 2nd digit: color (0-4)
+	- 3rd digit: level (1-9)
 	
-    JC 2023-03-13                                                             */
+    JC 2023-03-12                                                             */
 ////////////////////////////////////////////////////////////////////////////////
 int QC_GetCurrentCrystal() {
-	return QC_GetCrystalLevel() * 10
-		+ QC_GetCrystalColor();
+	return QC_GetCrystalClass() * 100
+		+ QC_GetCrystalColor() * 10
+		+ QC_GetCrystalLevel();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -122,4 +126,40 @@ void QC_SetCrystalGlobal(int nGlobal) {
 ////////////////////////////////////////////////////////////////////////////////
 void QC_SetKreiaGlobal(int nGlobal) {
 	SetGlobalNumber("000_Kreia_Lightsaber", nGlobal);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/*  QC_GetCrystalColor()
+	Gets the current Quest Crystal class, based on the class the player has
+	the most levels in.
+	- Jedi Guardian/Jedi Weapon Master/Sith Marauder: 0
+	- Jedi Sentinel/Jedi Watchman/Sith Assassin:      1
+	- Jedi Consular/Jedi Maser/Sith Lord:             2
+	
+    JC 2023-03-12                                                             */
+////////////////////////////////////////////////////////////////////////////////
+int QC_GetCrystalClass() {
+	object oPC = GetFirstPC();
+	int nClass;
+	
+	if( GetLevelByPosition(2, oPC) > GetLevelByPosition(1, oPC) )
+		nClass = GetClassByPosition(2, oPC);
+	else
+		nClass = GetClassByPosition(1, oPC);
+	
+	switch( nClass ) {
+	case CLASS_TYPE_JEDIGUARDIAN:
+	case CLASS_TYPE_JEDIWEAPONMASTER:
+	case CLASS_TYPE_SITHMARAUDER:
+		return 0;
+	case CLASS_TYPE_JEDISENTINEL:
+	case CLASS_TYPE_JEDIWATCHMAN:
+	case CLASS_TYPE_SITHASSASSIN:
+		return 1;
+	case CLASS_TYPE_JEDICONSULAR:
+	case CLASS_TYPE_JEDIMASTER:
+	case CLASS_TYPE_SITHLORD:
+		return 2;
+	}
+	return -1;
 }

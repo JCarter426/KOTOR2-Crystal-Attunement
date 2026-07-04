@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.1] - 2026-07-04
+
+### Fixed
+
+- Correct scripts for Class-Based Properties, which were missing the class-based code (whoops). One of the files was accidentally overwritten with the one for the regular properties.
+
 ## [2.0.0] - 2026-06-22
 
 ### Changed
