@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.2] - 2026-07-04
+
+### Fixed
+
+- Add some item properties which were missing for Class-Based Properties; a bug caused some values to always be 0 instead of incrementing by level.
+
 ## [2.0.1] - 2026-07-04
 
 ### Fixed
