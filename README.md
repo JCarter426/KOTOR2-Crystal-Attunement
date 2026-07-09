@@ -3,7 +3,7 @@
 |||
 | -------- | -----------------------------------------------------------|
 | Title:   | JC's Crystal Attunement for K2                             |
-| Version: | 2.0.0                                                      |
+| Version: | 2.0.3                                                      |
 | Game:    | Star Wars: Knights of the Old Republic II - The Sith Lords |
 | Author:  | JCarter426                                                 |
 
@@ -13,7 +13,7 @@ This mod is focused on the so-called Quest Crystal, a powerful lightsaber crysta
 
 The Quest Crystal in the original game has differing properties depending on your character's level and alignment only. This option gives the Quest Crystal differing properties based on your character's class in addition  to their level and alignment. Each combination of class and alignment has access to a unique set of item properties.
 
-Note: A crystal with Class-Based Properties is saved differently from the original crystal. Save game files containing the original crystal will not function correctly with Class-Based Properties installed. Likewise, save game files containing a Class-Based Properties crystal will no longer function correctly if that part of the mod is uninstalled.
+Note: A crystal with Class-Based Properties is saved differently from the original crystal. Save game files containing the original crystal will not function correctly with Class-Based Properties installed. Likewise, save game files containing a crystal with Class-Based Properties will no longer function correctly if that part of the mod is uninstalled.
 
 ## Workbench Attunement
 

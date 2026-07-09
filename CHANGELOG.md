@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.3] - 2026-07-09
+
+### Changed
+
+- Adjust installation instructions for Class-Based Properties to prevent adding redundant rows to upgrade.2da if the mod is installed more than once.
+
 ## [2.0.2] - 2026-07-04
 
 ### Fixed
