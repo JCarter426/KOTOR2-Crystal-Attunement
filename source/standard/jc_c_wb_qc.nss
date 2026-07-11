@@ -9,7 +9,7 @@
 	- The player has found the Quest Crystal
 	- The player has completed the Crafting a Lightsaber quest
 	
-    JC 2026-06-21                                                             */
+    JC 2026-07-11                                                             */
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "jc_inc_qc"

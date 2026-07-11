@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.4] - 2026-07-11
+
+### Fixed
+
+- Correct script error which prevented player from attuning crystal with Class-Based Properties.
+
+# Changelog
+
 ## [2.0.3] - 2026-07-09
 
 ### Changed

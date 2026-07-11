@@ -9,7 +9,7 @@
 	- The player has found the Quest Crystal
 	- The player has completed the Crafting a Lightsaber quest
 	
-    JC 2026-06-21                                                             */
+    JC 2026-07-11                                                             */
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "jc_inc_qc"
@@ -24,7 +24,7 @@ int StartingConditional() {
 	if (GetGlobalNumber("604DAN_PC_Crystal") == 0) {
 		return FALSE;
 	}
-	if (GetGlobalNumber("000_LightsaberQuest") < 50) {
+	if (GetJournalEntry("LightsaberQuest") < 50) {
 		return FALSE;
 	}
 	return TRUE;
