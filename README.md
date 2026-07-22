@@ -3,7 +3,7 @@
 |||
 | -------- | -----------------------------------------------------------|
 | Title:   | JC's Crystal Attunement for K2                             |
-| Version: | 2.0.4                                                      |
+| Version: | 2.0.5                                                      |
 | Game:    | Star Wars: Knights of the Old Republic II - The Sith Lords |
 | Author:  | JCarter426                                                 |
 

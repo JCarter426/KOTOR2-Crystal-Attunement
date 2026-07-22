@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.5] - 2026-07-21
+
+### Fixed
+
+- Correct some item prperties for Class-Based Properties which were miscalculated and did not have the intended effect.
+
 ## [2.0.4] - 2026-07-11
 
 ### Fixed
